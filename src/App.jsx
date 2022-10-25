@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
-import { FaDev, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaDev, FaYoutube } from 'react-icons/fa';
 
 function App() {
 
@@ -34,7 +34,9 @@ const time = `${hour<10 ? "0"+hour : hour}:${min<10 ? "0"+min : min}`
           <div className='widget--quick_action--card'> <FaDev /> </div>
           <div className='widget--quick_action--card'> <FaYoutube /> </div>
         </div>
-        <input type='text' name='search' placeholder='Search For Something Amazing...'></input>
+        <form action="http://google.com/search">
+          <input name='q' placeholder='Search For Something Amazing...'/>
+        </form>
       </div>
 
     </div>

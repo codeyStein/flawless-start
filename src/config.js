@@ -1,5 +1,6 @@
 export default [
 {
+	theme: "dark", // dark | light
 	widgets: {
 		timeDate: {
 			visibility: "show" // show | hidden

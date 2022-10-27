@@ -10,6 +10,7 @@ const conf = Config[0]
 const timeDate = conf.widgets.timeDate
 const searchBar = conf.widgets.searchBar
 const quickActions = conf.widgets.quickActions
+const theme = conf.theme
 
 const d = new Date();
 //Date
@@ -26,6 +27,14 @@ const hour = d.getHours();
 const min = d.getMinutes();
 const time = `${hour<10 ? "0"+hour : hour}:${min<10 ? "0"+min : min}`
 
+// Light/Dark mode variables
+const rs = document.querySelector(":root").style
+let bg = theme==='dark' ? '#1E1E1E' : '#EEE'
+let primary = theme==='dark' ? '#fff' : '#000'
+let secondary = theme==='dark' ? '#343434' : '#DDD'
+rs.setProperty('--primary', primary)
+rs.setProperty('--secondary', secondary)
+rs.setProperty('--bg', bg)
 
 const searchProvider = searchBar.searchProvider
 
@@ -56,7 +65,7 @@ const searchProvider = searchBar.searchProvider
         searchProvider==="bing" ? "https://www.bing.com/search?form=MOZLBR&pc=MOZI&q" :
         "https://duckduckgo.com/"
         }`}>
-          <input name='q' placeholder='Search For Something Amazing...'/>
+        <input name='q' placeholder='Search For Something Amazing...'/>
         </form>
         }
       </div>

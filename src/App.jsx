@@ -5,7 +5,11 @@ import Config from './config'
 
 function App() {
 
+// config variables
 const conf = Config[0]
+const timeDate = conf.widgets.timeDate
+const searchBar = conf.widgets.searchBar
+
 const d = new Date();
 //Date
 const months = ["Jan.", "Feb.", "Mart.", "April.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]
@@ -22,15 +26,15 @@ const min = d.getMinutes();
 const time = `${hour<10 ? "0"+hour : hour}:${min<10 ? "0"+min : min}`
 
 
-const searchProvider = conf.searchProvider
+const searchProvider = searchBar.searchProvider
 
 
   return (
     <div className="App">
 
       <div className='widgets__left'>
-        <h2 className='widget--time'>{time}</h2>
-        <h2 className='widget--date'>{date}</h2>
+        { timeDate.visibility==='show' && <h2 className='widget--time'>{time}</h2> }
+        { timeDate.visibility==='show' && <h2 className='widget--date'>{date}</h2> }
       </div>
 
       <div className='widgets__right'>
@@ -39,6 +43,8 @@ const searchProvider = conf.searchProvider
           <div className='widget--quick_action--card'> <FaDev /> </div>
           <div className='widget--quick_action--card'> <FaYoutube /> </div>
         </div>
+        {
+        searchBar.visibility==='show' &&
         <form action={`${
         searchProvider==="google" ? "https://google.com/search" : 
         searchProvider==="bing" ? "https://www.bing.com/search?form=MOZLBR&pc=MOZI&q" :
@@ -46,6 +52,7 @@ const searchProvider = conf.searchProvider
         }`}>
           <input name='q' placeholder='Search For Something Amazing...'/>
         </form>
+        }
       </div>
 
     </div>

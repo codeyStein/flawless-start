@@ -1,9 +1,11 @@
 // import { useState } from 'react'
 import './App.css'
 import { FaGithub, FaDev, FaYoutube } from 'react-icons/fa';
+import Config from './config'
 
 function App() {
 
+const conf = Config[0]
 const d = new Date();
 //Date
 const months = ["Jan.", "Feb.", "Mart.", "April.", "May.", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]
@@ -20,6 +22,9 @@ const min = d.getMinutes();
 const time = `${hour<10 ? "0"+hour : hour}:${min<10 ? "0"+min : min}`
 
 
+const searchProvider = conf.searchProvider
+
+
   return (
     <div className="App">
 
@@ -34,7 +39,11 @@ const time = `${hour<10 ? "0"+hour : hour}:${min<10 ? "0"+min : min}`
           <div className='widget--quick_action--card'> <FaDev /> </div>
           <div className='widget--quick_action--card'> <FaYoutube /> </div>
         </div>
-        <form action="http://google.com/search">
+        <form action={`${
+        searchProvider==="google" ? "https://google.com/search" : 
+        searchProvider==="bing" ? "https://www.bing.com/search?form=MOZLBR&pc=MOZI&q" :
+        "https://duckduckgo.com/"
+        }`}>
           <input name='q' placeholder='Search For Something Amazing...'/>
         </form>
       </div>

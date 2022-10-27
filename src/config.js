@@ -8,6 +8,9 @@ export default [
 			searchProvider: "duckduckgo", // google | duckduckgo | bing
 			visibility: "show" // show | hidden
 		},
+		quickActions: {
+			visibility: "show" // show | hidden
+		}
 	},
 }
 ]

@@ -9,6 +9,7 @@ function App() {
 const conf = Config[0]
 const timeDate = conf.widgets.timeDate
 const searchBar = conf.widgets.searchBar
+const quickActions = conf.widgets.quickActions
 
 const d = new Date();
 //Date
@@ -32,20 +33,25 @@ const searchProvider = searchBar.searchProvider
   return (
     <div className="App">
 
-      <div className='widgets__left'>
-        { timeDate.visibility==='show' && <h2 className='widget--time'>{time}</h2> }
-        { timeDate.visibility==='show' && <h2 className='widget--date'>{date}</h2> }
+      <div className='main'>
+        { timeDate.visibility==='show' &&
+      <div className='widgets__section-one'>
+        <h2 className='widget--time'>{time}</h2>
+        <h2 className='widget--date'>{date}</h2>
       </div>
+        }
 
-      <div className='widgets__right'>
+      <div className='widgets__section-two'>
+        { quickActions.visibility==='show'  &&
         <div className='widget--quick_actions'>
           <div className='widget--quick_action--card'> <FaGithub /> </div>
           <div className='widget--quick_action--card'> <FaDev /> </div>
           <div className='widget--quick_action--card'> <FaYoutube /> </div>
         </div>
+        }
         {
         searchBar.visibility==='show' &&
-        <form action={`${
+        <form className='widget--search' action={`${
         searchProvider==="google" ? "https://google.com/search" : 
         searchProvider==="bing" ? "https://www.bing.com/search?form=MOZLBR&pc=MOZI&q" :
         "https://duckduckgo.com/"
@@ -53,6 +59,8 @@ const searchProvider = searchBar.searchProvider
           <input name='q' placeholder='Search For Something Amazing...'/>
         </form>
         }
+      </div>
+
       </div>
 
     </div>

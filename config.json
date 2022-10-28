@@ -1,0 +1,19 @@
+
+{
+	"theme": "dark",
+
+	"widgets": {
+		"Time and Date": {
+			"visibility": "show"
+		},
+		"Search Bar": {
+			"Search Provider": "duckduckgo", 
+			"visibility": "show"
+		},
+		"Quick Actions": {
+			"visibility": "show" 
+		}
+	}
+
+}
+

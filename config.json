@@ -15,19 +15,19 @@
 
 		"Quick Actions": [
 			{
-				"visibility": "show",
 				"link": "https://github.com",
-				"icon": "FaGithub"
+				"icon": "FaGithub",
+				"id": 0
 			},
 			{
-				"visibility": "show",
 				"link": "https://dev.to",
-				"icon": "FaDev"
+				"icon": "FaDev",
+				"id": 1
 			},
 			{
-				"visibility": "show",
 				"link": "https://youtube.com",
-				"icon": "FaYoutube"
+				"icon": "FaYoutube",
+				"id": 2
 			}
 		]
 

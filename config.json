@@ -3,16 +3,34 @@
 	"theme": "dark",
 
 	"widgets": {
+
 		"Time and Date": {
 			"visibility": "show"
 		},
+
 		"Search Bar": {
 			"Search Provider": "duckduckgo", 
 			"visibility": "show"
 		},
-		"Quick Actions": {
-			"visibility": "show" 
-		}
+
+		"Quick Actions": [
+			{
+				"visibility": "show",
+				"link": "https://github.com",
+				"icon": "FaGithub"
+			},
+			{
+				"visibility": "show",
+				"link": "https://dev.to",
+				"icon": "FaDev"
+			},
+			{
+				"visibility": "show",
+				"link": "https://youtube.com",
+				"icon": "FaYoutube"
+			}
+		]
+
 	}
 
 }

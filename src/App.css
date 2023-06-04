@@ -1,3 +1,78 @@
+
 .main {
 	display: flex;
+	width: 1100px;
+	height: 175px;
+	column-gap: 50px;
 }
+
+/* ----DATE TIME---- */
+.widget--time {	font-size: 9.5rem;	}
+
+.widget--date {	font-size: 3.5rem;	}
+
+
+/*  ----SECTION ONE---- */
+
+.widgets__section-one {
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  padding: 25px;
+  gap: 25px;
+}
+
+.widgets__section-one h2 {	width: 100%; text-align: center;}
+
+/* ----SECTION TWO----   */
+
+.widgets__section-two {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	width: 100%;
+	height: 100%;
+}
+
+.widget--search input, .widget--search {
+	width: 100%;
+	height: 4rem;
+	background-color: var(--secondary);
+	border: none;
+	border-radius: 20px;
+	color: var(--primary);
+}
+
+input {	padding-left: 25px;	}
+
+
+
+/* ----QUICK ACTIONS---- */
+.widget--quick_actions {
+	display: flex;
+	flex-direction: row;
+	column-gap: 15px;
+  padding: 15px;
+	width: 100%;
+	height: 100%;
+}
+
+.widget--quick_action--card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--secondary);
+	border-radius: 20px;
+	width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.widget--quick_action--card a {
+  color: var(--primary);
+}
+
